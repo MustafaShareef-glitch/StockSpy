@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StockSpy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        h1 {
+            color: #222;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 10px;
+            width: 200px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .chart-container {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📈 StockSpy</h1>
+    <form method="POST">
+        <input name="symbol" placeholder="Enter stock symbol (e.g., AAPL)" required>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if price_info %}
+        <h2>{{ price_info }}</h2>
+    {% endif %}
+
+    <div class="chart-container">
+        {{ chart_html | safe }}
+    </div>
+</body>
+</html>
