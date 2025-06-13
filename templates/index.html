@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StockSpy</title>
+</head>
+<body>
+    <h1>📈 StockSpy</h1>
+    <form method="post">
+        <input type="text" name="symbol" placeholder="Enter stock symbol">
+        <button type="submit">Get Chart</button>
+    </form>
+    <div>
+        {{ chart_html|safe }}
+    </div>
+</body>
+</html>
